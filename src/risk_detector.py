@@ -1,20 +1,20 @@
 """
-Clause Detection Module
+Risk Detection Module
 
-Detects important legal clauses from contracts.
+Analyses legal documents for potential legal and business risks.
 """
 
 from src.llm import LegalLLM
 
 
-class ClauseDetector:
+class RiskDetector:
 
     def __init__(self, llm=None):
         self.llm = llm if llm else LegalLLM()
 
     # ----------------------------------------
-    # Detect Legal Clauses
+    # Detect Risks
     # ----------------------------------------
 
     def detect(self, document):
-        return self.llm.detect_clauses(document)
+        return self.llm.detect_risks(document)

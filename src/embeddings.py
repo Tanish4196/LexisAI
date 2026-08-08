@@ -7,9 +7,16 @@ and user queries.
 """
 
 import numpy as np
+import streamlit as st
 from sentence_transformers import SentenceTransformer
 
 from src.config import EMBEDDING_MODEL
+
+
+@st.cache_resource
+def load_embedding_model():
+    print(f"Loading embedding model: {EMBEDDING_MODEL}")
+    return SentenceTransformer(EMBEDDING_MODEL)
 
 
 class EmbeddingModel:
@@ -22,12 +29,7 @@ class EmbeddingModel:
     def __init__(self):
 
         if EmbeddingModel._model is None:
-
-            print(f"Loading embedding model: {EMBEDDING_MODEL}")
-
-            EmbeddingModel._model = SentenceTransformer(
-                EMBEDDING_MODEL
-            )
+            EmbeddingModel._model = load_embedding_model()
 
         self.model = EmbeddingModel._model
 

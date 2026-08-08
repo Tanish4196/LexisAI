@@ -7,6 +7,10 @@ Key goals:
 - Provide accurate, source-cited answers to user questions using RAG.
 - Offer legal-focused utilities such as clause detection, risk analysis, and contract comparison.
 
+Live demo
+- Streamlit (hosted): https://lexisai-tanishsharmaurl.streamlit.app/  
+(If the app is private or uses secrets, make sure the Streamlit deployment is configured with the proper environment variables.)
+
 ---
 
 ## Table of contents
